@@ -1,6 +1,11 @@
 "use client";
 
-const Item = ({ item, currentUser }) => {
+import { useContext } from "react";
+import UserContext from "../contexts/userContext";
+
+const Item = ({ item }) => {
+  const {currentUser} = useContext(UserContext);
+
   const handleBuyClick = () => {
     alert(
       `${currentUser.name} just bought the ${item.name} for the fairest bestest price of ${item.price}!`
